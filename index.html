@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Técnico: Simuladores Interactivos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <header>
+        <h1>Simuladores Interactivos con Lógica Matemática</h1>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Ejercicio 1: Simulador de Transferencia de Calor</h2>
+            <p class="description">Ley de Enfriamiento: Calcula la temperatura final de un objeto.</p>
+            
+            <form id="form-calor">
+                <div class="form-group">
+                    <label for="t0">Temperatura Inicial (T₀) en °F:</label>
+                    <input type="number" id="t0" value="120" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ts">Temperatura del Entorno (T_s) en °F:</label>
+                    <input type="number" id="ts" value="38" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="k">Constante de Enfriamiento (k):</label>
+                    <input type="number" id="k" value="0.45" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">Tiempo en horas (t):</label>
+                    <input type="number" id="time" value="3" step="any" min="0" required>
+                </div>
+                
+                <button type="button" id="btn-calcular-calor">Calcular Temperatura</button>
+            </form>
+            
+            <div id="resultado-calor" class="result-box hidden">
+                <p>La temperatura final estimada es: <strong id="val-calor">--</strong> °F</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Ejercicio 2: Calculador de Combinaciones (Sorteo)</h2>
+            <p class="description">Calcula el total de combinaciones simultáneas multiplicando ambos grupos.</p>
+            
+            <form id="form-combinaciones">
+                <h3>Grupo 1</h3>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="n1">Total Objetos (n₁):</label>
+                        <input type="number" id="n1" value="59" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r1">Elegidos (r₁):</label>
+                        <input type="number" id="r1" value="5" min="0" required>
+                    </div>
+                </div>
+
+                <h3>Grupo 2</h3>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="n2">Total Objetos (n₂):</label>
+                        <input type="number" id="n2" value="35" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r2">Elegidos (r₂):</label>
+                        <input type="number" id="r2" value="1" min="0" required>
+                    </div>
+                </div>
+                
+                <button type="button" id="btn-calcular-combinaciones">Calcular Combinaciones</button>
+            </form>
+            
+            <div id="resultado-combinaciones" class="result-box hidden">
+                <p>Total de combinaciones posibles: <strong id="val-combinaciones">--</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
